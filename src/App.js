@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Category from "./components/Category";
+import Question from "./components/Question";
+import "./App.css";
 
+/**
+ * The main application component.
+ * Handles the game state and routing.
+ */
 function App() {
+  const [score, setScore] = useState(0);
+
+  /**
+   * Updates the score by adding the given points.
+   * @param {number} points - The points to add to the score.
+   */
+  const updateScore = (points) => {
+    setScore((prevScore) => prevScore + points);
+  };
+
+  /**
+   * Resets the score to 0.
+   */
+  const resetScore = () => {
+    setScore(0);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                score={score}
+                updateScore={updateScore}
+                resetScore={resetScore}
+              />
+            }
+          />
+          <Route path="/category/:categoryName" element={<Category />} />
+          <Route path="/question/:questionId" element={<Question />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

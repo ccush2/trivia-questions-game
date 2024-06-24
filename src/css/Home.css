@@ -1,0 +1,33 @@
+.home {
+  text-align: center;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.score-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.score-container button {
+  margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1px;
+  background-color: #000;
+  border: 1px solid #000;
+  flex-grow: 1;
+}
