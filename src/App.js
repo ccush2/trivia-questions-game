@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Category from "./components/Category";
 import Question from "./components/Question";
@@ -28,24 +28,22 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                score={score}
-                updateScore={updateScore}
-                resetScore={resetScore}
-              />
-            }
-          />
-          <Route path="/category/:categoryName" element={<Category />} />
-          <Route path="/question/:questionId" element={<Question />} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              score={score}
+              updateScore={updateScore}
+              resetScore={resetScore}
+            />
+          }
+        />
+        <Route path="/category/:categoryName" element={<Category />} />
+        <Route path="/question/:questionId" element={<Question />} />
+      </Routes>
+    </div>
   );
 }
 

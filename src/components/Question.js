@@ -36,6 +36,16 @@ function Question() {
    */
   const handleAnswerSelect = (answer) => {
     setSelectedAnswer(answer);
+
+    // Update the className of the selected answer button
+    const answerButtons = document.querySelectorAll(".answer-options button");
+    answerButtons.forEach((button) => {
+      if (button.textContent === answer) {
+        button.classList.add("selected");
+      } else {
+        button.classList.remove("selected");
+      }
+    });
   };
 
   /**
@@ -43,13 +53,18 @@ function Question() {
    * Navigates back to the home page with the result and score.
    */
   const handleSubmit = () => {
-    if (selectedAnswer === question.correctAnswer) {
+    const selectedAnswerButton = document.querySelector(
+      ".answer-options button.selected"
+    );
+    const selectedAnswerText = selectedAnswerButton
+      ? selectedAnswerButton.textContent
+      : "";
+
+    if (selectedAnswerText === question.correctAnswer) {
       navigate("/", { state: { correct: true, score: pointValue } });
     } else {
       navigate("/", { state: { correct: false } });
     }
-
-    setSelectedAnswer("");
   };
 
   /**
@@ -61,13 +76,14 @@ function Question() {
   };
 
   return (
-    <div className="question-container">
+    <div className="question-container" data-testid="question-component">
       <h2>{question.question.text}</h2>
       <ul className="answer-options">
         {[...question.incorrectAnswers, question.correctAnswer].map(
           (answer, index) => (
             <li key={index}>
               <button
+                data-testid={`answer-button-${answer}`}
                 className={selectedAnswer === answer ? "selected" : ""}
                 onClick={() => handleAnswerSelect(answer)}
               >

@@ -14,7 +14,6 @@ import "../css/Home.css";
 function Home({ score, updateScore, resetScore }) {
   const [categories, setCategories] = useState([]);
   const location = useLocation();
-  const navigate = useNavigate();
   const prevLocationKeyRef = useRef(null);
 
   useEffect(() => {

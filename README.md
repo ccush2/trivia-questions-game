@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Trivia Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Trivia Game is a web-based application built with React that allows users to test their knowledge by answering trivia questions from various categories. The game fetches questions from the Trivia API and presents them to the user in a user-friendly interface. The application is deployed and can be accessed at https://trivia-questions-game.onrender.com
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Multiple categories to choose from, including History, Film & TV, General Knowledge, Sport & Leisure, and Music.
+- Questions with different difficulty levels (easy, medium, hard) and corresponding point values.
+- Interactive gameplay where users can select an answer and submit their response.
+- Score tracking and the ability to restart the game.
+- Routing using React Router for seamless navigation between pages.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React: A JavaScript library for building user interfaces.
+- React Router: A routing library for React applications.
+- Axios: A promise-based HTTP client for making API requests.
+- CSS: Cascading Style Sheets for styling the components.
+- Jest: A JavaScript testing framework for unit testing.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To run the Trivia Questions Game locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository: git clone https://github.com/your-username/trivia-questions-game.git
 
-### `npm run build`
+2. Navigate to the project directory: cd trivia-questions-game
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Install the dependencies: npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server: npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+5. Open your browser and visit `http://localhost:3000` to play the game.
 
-### `npm run eject`
+## Testing
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project includes unit tests written with Jest. To run the tests, use the following command: npm test
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The tests cover the main components and ensure their proper rendering and behavior.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The Trivia Questions Game uses the Trivia API to fetch questions and categories. The API endpoints used in the game are:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `https://the-trivia-api.com/api/questions`: Fetches questions based on the selected category and difficulty level.
+- `https://the-trivia-api.com/api/categories`: Fetches the available categories for the game.

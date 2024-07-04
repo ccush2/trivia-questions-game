@@ -78,7 +78,7 @@ function Category({ category }) {
   };
 
   return (
-    <div className="category">
+    <div className="category" data-testid="category-component">
       <h2>{category}</h2>
       <ul className="point-values">
         {questions.map((question, index) => (
